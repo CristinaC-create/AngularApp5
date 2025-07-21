@@ -1,0 +1,49 @@
+<!-- 🛒 Floating Shopping List Section -->
+<div class="shopping-float" *ngIf="shoppingList.length > 0">
+  <h2>Your Shopping List</h2>
+  <ul>
+    <li *ngFor="let item of shoppingList">
+      {{ item }}
+      <button (click)="removeFromShoppingList(item)">Remove</button>
+    </li>
+  </ul>
+</div>
+
+<!-- 📦 Centered Wrapper for Recipes -->
+<div class="recipe-container">
+  <div class="recipe-list">
+    <div class="recipe-details" *ngFor="let recipe of recipes">
+      <h1>{{ recipe.name }}</h1>
+
+      <!-- Hardcoded image path based on recipe name -->
+      <img [src]="
+          recipe.name === 'Creamy Garlic Pasta' ? 'assets/images/pasta.jpeg' :
+          recipe.name === 'Grilled Chicken' ? 'assets/images/chicken.jpeg' :
+          recipe.name === 'Fresh Garden Salad' ? 'assets/images/salad.jpeg' :
+          ''
+        " alt="{{ recipe.name }}" style="width: 150px; height: auto; border-radius: 8px;" />
+
+      <p>{{ recipe.description }}</p>
+
+      <!-- Add to Cart Button -->
+      <button (click)="addToCart(recipe)" class="btn cart-btn">Add to Cart</button>
+
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <li *ngFor="let item of recipe.ingredients">
+            {{ item }}
+            <button (click)="addToShoppingList(item)">Add</button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="instructions">
+        <h2>Instructions</h2>
+        <ol>
+          <li *ngFor="let step of recipe.instructions">{{ step }}</li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.ingredients-page {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff8e1;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.ingredients-page h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff7043;
+}
+
+.ingredients-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-page li {
+  font-size: 1.1rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}

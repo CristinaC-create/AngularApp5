@@ -1,0 +1,33 @@
+<div class="cart-wrapper">
+  <h2>Your Cart</h2>
+  <p>You have {{ items.length }} item{{ items.length > 1 ? 's' : '' }} in your cart.</p>
+
+  <ng-container *ngIf="items.length > 0; else emptyCart">
+    <div class="cart-grid">
+      <div *ngFor="let item of items; let i = index" class="cart-card">
+
+        <!-- Hardcoded image path based on cart item name -->
+        <img [src]="
+            item.name === 'Creamy Garlic Pasta' ? 'assets/images/pasta.jpeg' :
+            item.name === 'Grilled Chicken' ? 'assets/images/chicken.jpeg' :
+            item.name === 'Fresh Garden Salad' ? 'assets/images/salad.jpeg' :
+            ''
+          " alt="{{ item.name }}" class="cart-thumb" />
+
+        <h3>{{ item.name }}</h3>
+        <p class="description">Delicious choice to add to your meal lineup!</p>
+        <button (click)="removeItem(i)" class="btn cart-btn">Remove</button>
+      </div>
+    </div>
+
+    <div class="cart-actions">
+      <button (click)="clearCart()" class="btn cart-btn">Clear Cart</button>
+      <button routerLink="/recipes" class="btn recipes-btn">Continue Shopping</button>
+    </div>
+  </ng-container>
+
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+    <button routerLink="/recipes" class="btn recipes-btn">Browse Recipes</button>
+  </ng-template>
+</div>

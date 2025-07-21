@@ -1,0 +1,166 @@
+/* === Layout Wrapper === */
+.page-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+/* === Shopping Sidebar === */
+.shopping-sidebar {
+  width: 250px;
+  background-color: #fefae0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+}
+
+.shopping-sidebar h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #5d4037;
+}
+
+.shopping-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.shopping-sidebar li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.shopping-sidebar button {
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.shopping-sidebar button:hover {
+  background-color: #d32f2f;
+}
+
+/* === Recipe Cards === */
+.recipe-list {
+  flex: 1;
+}
+
+.recipe-details {
+  max-width: 800px;
+  margin-bottom: 40px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.recipe-details h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #e64a19;
+}
+
+.recipe-details img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.recipe-details p {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.ingredients,
+.instructions {
+  margin-bottom: 30px;
+}
+
+.ingredients h2,
+.instructions h2 {
+  font-size: 1.6rem;
+  color: #444;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff7043;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.ingredients ul,
+.instructions ol {
+  padding-left: 20px;
+}
+
+.ingredients li,
+.instructions li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+.shopping-float {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  width: 250px;
+  background-color: #fefae0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.shopping-float h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #5d4037;
+}
+
+.shopping-float ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shopping-float li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.shopping-float button {
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.shopping-float button:hover {
+  background-color: #d32f2f;
+}
+.recipe-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}

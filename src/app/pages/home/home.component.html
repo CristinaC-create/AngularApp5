@@ -1,0 +1,43 @@
+<div class="home-wrapper">
+  <header class="hero-banner">
+    <h1>Welcome to Recipe Central</h1>
+    <p>Your go-to place for home-cooked inspiration and delightful dishes.</p>
+
+    <!-- 🔍 Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search recipes..." [(ngModel)]="searchTerm" />
+      <button (click)="searchRecipes()" class="btn cart-btn">Search</button>
+    </div>
+
+    <div class="nav-buttons">
+      <button [routerLink]="['/recipes']" class="btn recipes-btn">Go to Recipes</button>
+      <button [routerLink]="['/cart']" class="btn cart-btn">🛒 View Cart ({{ cartCount }})</button>
+    </div>
+  </header>
+
+  <section class="preview-section">
+    <h2>Popular Recipes</h2>
+    <div class="recipe-preview">
+      <div class="recipe-card">
+        <img src="assets/images/pasta.jpeg" alt="Pasta" />
+        <h3>Creamy Garlic Pasta</h3>
+        <p>Rich, creamy, and perfect for cozy nights in.</p>
+      <button (click)="addToCart({ name: 'Creamy Garlic Pasta' })" class="btn cart-btn">Add to Cart</button>
+      </div>
+
+      <div class="recipe-card">
+        <img src="assets/images/chicken.jpeg" alt="Grilled Chicken" />
+        <h3>Grilled Chicken</h3>
+        <p>Juicy, herby chicken cooked to perfection.</p>
+      <button (click)="addToCart({ name: 'Grilled Chicken' })" class="btn cart-btn">Add to Cart</button>
+      </div>
+
+      <div class="recipe-card">
+        <img src="assets/images/salad.jpeg" alt="Fresh Garden Salad" />
+        <h3>Fresh Garden Salad</h3>
+        <p>Colorful, crisp, and bursting with so much flavor.</p>
+      <button (click)="addToCart({ name: 'Fresh Garden Salad' })" class="btn cart-btn">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+</div>
