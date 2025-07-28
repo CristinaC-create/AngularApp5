@@ -1,36 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms'; // ✅ Import this!
+import { FormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule],
+  styleUrls: ['./home.component.css'],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']  // ✅ Include this
 })
 export class HomeComponent implements OnInit {
-  searchTerm = '';
   cartCount = 0;
+  searchTerm = '';
+  items: any[] = [];
 
-  constructor(private cartService: CartService) { }
+  constructor(public cartService: CartService) { }
 
-  ngOnInit() {
-    this.updateCartCount();
+  ngOnInit(): void {
+    this.cartService.loadCart(); // Load from localStorage
+    this.items = this.cartService.getItems();
+    this.cartCount = this.items.length;
   }
 
-  searchRecipes() {
-    console.log('Searching for:', this.searchTerm);
-  }
-
-  addToCart(item: any) {
+  addToCart(item: any): void {
     this.cartService.addToCart(item);
-    this.updateCartCount();
+    this.items = this.cartService.getItems();
+    this.cartCount = this.items.length;
   }
 
-  updateCartCount() {
-    this.cartCount = this.cartService.getItems().length;
+  searchRecipes(): void {
+    console.log('Searching:', this.searchTerm);
   }
 }
